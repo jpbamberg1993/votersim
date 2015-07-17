@@ -1,4 +1,5 @@
-require "./voter"
+require "./voter.rb"
+require "./candidate.rb"
 
 def test_voter
   name = "Sandy"
@@ -9,10 +10,9 @@ def test_voter
   v
 end
 
+voter = test_voter
+
 # voter = test_voter
-
-require "./candidate"
-
 def test_candidate(voter)
   name = "Mike"
   party = "Republican"
@@ -35,21 +35,21 @@ voters = [
   Voter.new("Charlie", "Independent"),
   Voter.new("Darlene", "Conservative"),
   Voter.new("Edgar", "Massachusetts Democrat"),
+  Voter.new("Sam", "Republican"),
+  Voter.new("Rebecca", "Democrat"),
+  Voter.new("Theo", "Republican"),
+  Voter.new("Victor", "Republican")
 ]
 
 candidates = [
-  Candidate.new("Sam", "Republican"),
-  Candidate.new("Rebecca", "Democrat"),
-  Candidate.new("Theo", "Republican"),
   Candidate.new("Ulrich", "Republican"),
-  Candidate.new("Victor", "Republican"),
   Candidate.new("Walter", "Republican")
 ]
 
 voters += candidates
 
-candidates.each do |c|
-  c.votes = c.stump(voters)
-end
+# candidates.each do |c|
+#   c.votes = c.stump(voters)
+# end
 
-winner = name # The candidate with the most votes
+winner = "test"# The candidate with the most votes
